@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <main className="w-full flex flex-row relative min-h-screen">
+    <main className="w-full flex flex-row relative min-h-screen ">
       <aside className="sidebar bg-[#ff8730] w-40 flex flex-col items-center justify-center fixed h-full">
         <nav className="bg-white bg-opacity-20 w-[80%] h-[80%] rounded-2xl flex justify-center items-center">
           <ul className="flex flex-col justify-center items-start gap-3 px-5 py-8 h-full cursor-pointer text-sm gap-y-4">

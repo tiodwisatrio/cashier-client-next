@@ -16,8 +16,6 @@ export default function Transaction() {
     }
   };
 
-
-
   useEffect(() => {
     fetchTransactions();
   }, []);

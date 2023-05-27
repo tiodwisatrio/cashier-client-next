@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toRupiah from "@develoka/angka-rupiah-js";
 
 const Transactions = ({ transactions }) => {
   const [searchTransaction, setSearchTransaction] = useState("");
@@ -80,10 +81,10 @@ const Transactions = ({ transactions }) => {
                     })}
                   </td>
                   <td className="px-4 py-2 border border-gray-300">
-                    Rp {transaction.total_price}
+                    {toRupiah(transaction.total_price)}
                   </td>
                   <td className="px-4 py-2 border border-gray-300">
-                    Rp {transaction.paid_amount}
+                    {toRupiah(transaction.paid_amount)}
                   </td>
                 </tr>
               );

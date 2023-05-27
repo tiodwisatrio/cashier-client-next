@@ -26,7 +26,7 @@ export default function Home() {
       <div className="ml-16 mr-8 mt-8 mb-3">
         <h1 className="font-bold">Cashier App</h1>
       </div>
-      <div className="flex flex-col-reverse md:flex-row">
+      <div className="flex flex-col-reverse md:flex-row mb-4">
         <ProductList products={products} />
         <Cart />
       </div>

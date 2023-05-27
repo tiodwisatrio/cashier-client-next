@@ -1,5 +1,6 @@
 import { useCartsDispatch } from "@/context/CartContext";
 import React, { useState } from "react";
+import toRupiah from "@develoka/angka-rupiah-js";
 
 const ProductList = ({ products }) => {
   const dispatch = useCartsDispatch();
@@ -19,26 +20,13 @@ const ProductList = ({ products }) => {
     setSearchProduct(value);
   };
 
-  console.log({ searchProduct });
-
   const filteredProduct = products.filter((product) => {
     return product.name.toLowerCase().includes(searchProduct.toLowerCase());
   });
 
-  // const handleFilteredProduct = () => {
-  //   const filteredProducts = products.filter((product) => {
-  //     return {
-  //       ...product,
-  //       name: product.name.toLowerCase().includes(searchProduct.toLowerCase()),
-  //     };
-  //   });
-  //   return filteredProducts;
-  // };
-
   return (
     <>
       <div className="flex flex-col ml-16 w-[100%] ">
-        
         <div className="flex flex-row gap-x-2 mb-6">
           <input
             type="text"
@@ -51,15 +39,12 @@ const ProductList = ({ products }) => {
             Search
           </button>
         </div>
-        {/* <div className="w-full flex gap-4 flex-wrap items-center justify-center"> */}
         <div className="w-full flex gap-4 flex-wrap items-center justify-start h-full">
-          {/* ${index === cards.length - 1 ? 'pr-0' : ''} */}
-          {/* <div className={`w-full flex flex-wrap items-center justify-start h-full overflow-auto ${`products`}`}> */}
           {filteredProduct.map((product, index) => {
             return (
               <div
                 key={index}
-                className={`productCard bg-white py-2 w-[210px] h-[250px] rounded-lg shadow-lg ${
+                className={`productCard bg-white py-2 w-[210px]  rounded-lg shadow-lg ${
                   index === filteredProduct.length - 1 ? "pr-0" : ""
                 }`}
               >
@@ -81,7 +66,7 @@ const ProductList = ({ products }) => {
                   </div>
                   <div className="flex flex-row items-center justify-between mt-4">
                     <p className="font-semibold text-xl text-[#ff8730]">
-                      Rp {product.price}
+                      {toRupiah(product.price, { replaceZeroDecimals: true })}
                     </p>
                     <p className="text-[12px] opacity-70">
                       stock: {product.stock}
