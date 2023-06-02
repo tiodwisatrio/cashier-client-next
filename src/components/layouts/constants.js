@@ -4,7 +4,7 @@ import { HiHome, HiFolderOpen, HiLogin } from "react-icons/hi";
 export const list_menu = [
   {
     name: "Home",
-    path: "/home",
+    path: "/",
     icon: <HiHome />,
   },
   {
@@ -12,5 +12,4 @@ export const list_menu = [
     path: "/transaction",
     icon: <HiFolderOpen />,
   },
-  
 ];
