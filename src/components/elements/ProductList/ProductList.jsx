@@ -7,7 +7,6 @@ const ProductList = ({ products }) => {
   const [searchProduct, setSearchProduct] = useState("");
 
   const handleAddToCart = (product) => {
-    // console.log(product);
     dispatch({
       type: "added",
       payload: product,

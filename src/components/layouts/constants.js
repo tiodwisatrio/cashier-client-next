@@ -1,5 +1,5 @@
 // import { FaHome, fa} from 'react-icons/fa'
-import { HiHome, HiFolderOpen, HiLogin } from "react-icons/hi";
+import { HiHome, HiFolderOpen, HiMenu } from "react-icons/hi";
 
 export const list_menu = [
   {
@@ -11,5 +11,10 @@ export const list_menu = [
     name: "Transaction",
     path: "/transaction",
     icon: <HiFolderOpen />,
+  },
+  {
+    name: "List Products",
+    path: "/list_product",
+    icon: <HiMenu />,
   },
 ];
