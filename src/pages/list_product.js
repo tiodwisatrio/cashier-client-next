@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Layout from "@/components/layouts/Layout.jsx";
-import ProductList from "@/components/elements/ProductList/ProductList";
-import Cart from "@/components/elements/Cart/Cart";
+
 import api from "@/api/index.js";
+import Link from "next/link";
 
 export default function ListProduct() {
   const [products, setProducts] = useState([]);
@@ -49,12 +49,15 @@ export default function ListProduct() {
           Search
         </button>
 
-        <button className="bg-[#119578] rounded px-4 py-[9px] text-white text-sm">
+        <Link
+          className="bg-teal-700 hover:bg-teal-800 transition-all duration-300 rounded px-4 py-[9px] text-white text-sm"
+          href="/add_product"
+        >
           Tambah Product
-        </button>
+        </Link>
       </div>
       <div className="flex flex-col-reverse md:flex-row ml-16 w-full">
-        <table className="w-[90%]">
+        <table className="w-[90%] mb-10">
           <thead>
             <tr>
               <th className="px-4 py-2 bg-[#ff8730] text-white border border-gray-300">
