@@ -13,7 +13,7 @@ const Cart = () => {
     dispatch({
       type: "added",
       payload: product,
-    });
+    });  
   };
 
   const handleDecreaseCart = (product) => {

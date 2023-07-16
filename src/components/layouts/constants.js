@@ -13,7 +13,7 @@ export const list_menu = [
     icon: <HiFolderOpen />,
   },
   {
-    name: "List Products",
+    name: "Products",
     path: "/list_product",
     icon: <HiMenu />,
   },

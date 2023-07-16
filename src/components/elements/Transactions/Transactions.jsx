@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import toRupiah from "@develoka/angka-rupiah-js";
+import moment from "moment";
 
 const Transactions = ({ transactions }) => {
   const [searchTransaction, setSearchTransaction] = useState("");
@@ -11,11 +12,24 @@ const Transactions = ({ transactions }) => {
   };
 
   const filteredTransaction = transactions.filter((transaction) => {
-    return transaction.no_order.toUpperCase().includes(searchTransaction);
+    const data = transaction.no_order.toUpperCase().includes(searchTransaction);
+    return data;
   });
 
   const handlePrintTableButton = () => {
+    // Menyembunyikan komponen lain saat mencetak
+    const otherComponents = document.querySelectorAll(".other-component");
+    otherComponents.forEach((component) => {
+      component.style.display = "none";
+    });
+
+    // Mencetak halaman menggunakan window.print()
     window.print();
+
+    // Menampilkan kembali komponen lain setelah pencetakan selesai
+    otherComponents.forEach((component) => {
+      component.style.display = "block";
+    });
   };
 
   return (
@@ -39,7 +53,7 @@ const Transactions = ({ transactions }) => {
       </div>
 
       {/* Table */}
-      <div className="container w-full mx-auto mt-8 mb-8 px-32 print-container">
+      <div className="print-container w-full mx-auto mt-8 mb-8 px-32 print-container">
         <table className="print-table min-w-full border border-gray-300 text-sm">
           <thead>
             <tr>

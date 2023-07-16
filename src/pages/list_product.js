@@ -31,7 +31,6 @@ export default function ListProduct() {
   useEffect(() => {
     fetchProducts();
   }, []);
-  console.log(products);
 
   return (
     <Layout>
